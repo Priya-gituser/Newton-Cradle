@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Newton Cradle by using pure HTML and CSS.">
+    <meta name="keywords" content="HTML, , CSS, Animation, before pseudo classe, CSS Variables">
+    <meta name="author" content="Priya Singh">
+    <title>Newton Cradle</title>
+    <style>
+        *{ margin: 0px;
+        padding: 0px;
+        box-sizing: border-box; }
+
+     body { background-color: black;
+     display: grid;
+     place-items: center; 
+   }
+
+h1{
+    color: azure;
+    font-family: cursive;
+}
+     .cradle{
+        text-align: center;
+        background-color: beige;
+        height: 80vh;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+overflow: hidden;   
+  }
+
+:root{
+    --CradleBG: rgb(97, 93, 93);
+}
+     #cradleHanger{
+        margin-top: 10vh;
+        background-color: var(--CradleBG);
+        height: 2rem;
+        width: 40rem;
+        /* border: 2px solid red; */
+        border-radius: 10px 10px 0px 0px;
+        display: flex;
+        justify-content: center;
+     }
+
+     .Cradlestrings{
+        background-color: var(--CradleBG);
+        /* border: 2px solid red; */
+       height: 20rem;
+        width: .5rem;
+        margin-left: 2rem;
+        margin-right: 2.4rem;
+        position: relative;
+
+    }
+
+/* #string1::before{
+content:" ";
+background-color: var(--CradelBG);
+height: 80px;
+aspect-ratio: 1;
+border-radius: 50%;
+position: absolute; 
+top:90%;
+left: -2.1vw;
+ }
+
+#string2::before{
+content:" ";
+background-color: var(--CradelBG);
+height: 80px;
+aspect-ratio: 1;
+border-radius: 50%;
+position: absolute; 
+top:90%;
+left: -2.1vw;
+ }
+
+#string3::before{
+content:" ";
+background-color: var(--CradelBG);
+height: 80px;
+aspect-ratio: 1;
+border-radius: 50%;
+position: absolute; 
+top:90%;
+left: -2.1vw;
+ }
+
+#string4::before{
+content:" ";
+background-color: var(--CradelBG);
+height: 80px;
+aspect-ratio: 1;
+border-radius: 50%;
+position: absolute; 
+top:90%;
+left: -2.1vw;
+ }
+
+#string5::before{
+content:" ";
+background-color: var(--CradelBG);
+height: 80px;
+aspect-ratio: 1;
+border-radius: 50%;
+position: absolute; 
+top:90%;
+left: -2.1vw;
+} */
+
+/*  % balls individually or one code for all balls */
+
+.Cradlestrings::before{
+content:" ";
+background-color: var(--CradleBG);
+height: 80px;
+aspect-ratio: 1;
+/* border: 2px solid black; */
+border-radius: 50%;
+position: absolute; 
+top:90%;
+left: -2.2vw;
+}
+
+#string1{
+    animation: left-ball 1s linear infinite ;
+    transform-origin:top left;
+}
+
+@keyframes left-ball {
+    
+    0%{
+   rotate: 0deg;
+    }
+
+    25%{
+   rotate: 50deg;
+    }
+  
+    50%{
+rotate: 0deg;
+    }
+
+    100%{
+        rotate: 0deg;
+    }
+    }
+
+    #string5{
+    animation: right-ball 1s linear .5s infinite;
+    transform-origin:top right;
+}
+
+@keyframes right-ball {
+    
+    0%{
+   rotate: 0deg;
+    }
+
+    25%{
+   rotate: -50deg;
+    }
+  
+    50%{
+rotate: 0deg;
+    }
+
+    100%{
+        rotate: 0deg;
+    }
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Newton's Cradle</h1>
+
+    <div class="cradle">
+
+        <div id="cradleHanger">
+
+            <div class="Cradlestrings" id="string1"></div>
+            <div class="Cradlestrings" id="string2"></div>
+            <div class="Cradlestrings" id="string3"></div>
+            <div class="Cradlestrings" id="string4"></div>
+            <div class="Cradlestrings" id="string5"></div>
+        </div>
+        <audio id="CradleBallsHitting"  autoplay loop controls>
+            <source src="./CradleSound.mp3" type="audio/mpeg"/>
+          </audio>
+    </div>
+</body>
+</html>
